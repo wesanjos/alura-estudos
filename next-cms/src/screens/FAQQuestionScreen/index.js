@@ -33,8 +33,12 @@ export async function getStaticProps({ params }) {
     query: contentQuery,
   });
 
+  console.log(data);
+  
   return {
     props: {
+      cmsContent: data,
+
       id,
       title: data.contentFaqQuestion.title,
       content: data.contentFaqQuestion.content,
@@ -42,7 +46,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function FAQQuestionScreen({ title, content }) {
+export default function FAQQuestionScreen({ cmsContent }) {
   return (
     <>
       <Head>
@@ -68,7 +72,7 @@ export default function FAQQuestionScreen({ title, content }) {
           }}
         >
           <Text tag="h1" variant="heading1">
-            {title}
+            {cmsContent.contentFaqQuestion.title}
           </Text>
 
           {/* <Box dangerouslySetInnerHTML={{ __html: content }} /> */}
@@ -87,12 +91,12 @@ export default function FAQQuestionScreen({ title, content }) {
                 );
               }),
             ]}
-            data={content}
+            data={cmsContent.contentFaqQuestion.content}
           />
         </Box>
       </Box>
 
-      <Footer />
+      <Footer description={cmsContent.globalContent.globalFooter.description} />
     </>
   );
 }
