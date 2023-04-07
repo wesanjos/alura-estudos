@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, preview }) {
   const { id } = params;
 
   //https://graphql.datocms.com/
@@ -29,11 +29,12 @@ export async function getStaticProps({ params }) {
     }
   `;
 
+  
+
   const { data } = await cmsService({
     query: contentQuery,
+    preview
   });
-
-  console.log(data);
   
   return {
     props: {
