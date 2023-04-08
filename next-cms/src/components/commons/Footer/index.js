@@ -2,7 +2,8 @@ import { getCMSContent } from "../../../infra/cms/CMSProvider";
 import { Box, Link, Text, theme } from "../../../theme/components";
 
 export function Footer() {
-  const description = getCMSContent().globalContent?.globalFooter?.description;
+  //Coletando informações do CMS junto ao Context API
+  const description = getCMSContent('globalContent.globalFooter.description');
 
   return (
     <Box
