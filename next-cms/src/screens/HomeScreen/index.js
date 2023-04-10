@@ -50,18 +50,4 @@ function HomeScreen() {
   )
 }
 
-// function HomeScreen() {
-//   return (
-//     <>
-//       <Head>
-//         <title>Home - Alura</title>
-//       </Head>
-
-//       <Menu />
-
-//       <Footer />
-//     </>
-//   )
-// }
-
 export default pageHOC(HomeScreen);
