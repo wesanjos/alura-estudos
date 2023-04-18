@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "styled-components": "^5.3.9",
     "@alura-estudo/design-system": "*",
     "@alura-estudo/utils": "*",
     "next": "^13.3.0",
@@ -17,8 +18,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.35",
-    "typescript": "5.0.4"
+    "@alura-estudo/tsconfig-commons": "*"
   }
 }
