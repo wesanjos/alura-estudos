@@ -1,0 +1,25 @@
+
+   
+{
+  "name": "@alura-estudo/test-commons",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "base.ts"
+  ],
+  "devDependencies": {
+    "jest": "27.0.0",
+    "ts-node": "10.7.0",
+    "babel-jest": "28.0.3",
+    "@babel/core": "7.17.10",
+    "@babel/preset-env": "7.17.10",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
+    "@types/jest": "29.5.1"
+  },
+  "scripts": {
+    "test": "echo 'Not implemented'",
+    "lint": "echo 'Not implemented'"
+  }
+}

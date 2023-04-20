@@ -14,7 +14,9 @@
     "build:web-public": "yarn web-public build",
     "start:web-public": "yarn web-public start",
     "lint:web-public": "yarn web-public lint",
-    "design-system": "yarn workspace @alura-estudo/design-system"
+    "design-system": "yarn workspace @alura-estudo/design-system",
+    "utils": "yarn workspace @alura-estudo/utils",
+    "test:utils": "yarn utils test"
   },
   "dependencies": {
     "eslint": "8.38.0",
