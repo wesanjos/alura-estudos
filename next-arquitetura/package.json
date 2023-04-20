@@ -15,6 +15,7 @@
     "start:web-public": "yarn web-public start",
     "lint:web-public": "yarn web-public lint",
     "design-system": "yarn workspace @alura-estudo/design-system",
+    "test:design-system": "yarn design-system test",
     "utils": "yarn workspace @alura-estudo/utils",
     "test:utils": "yarn utils test"
   },
