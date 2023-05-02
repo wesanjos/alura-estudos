@@ -11,8 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Directory Access 
+        run: cd github-actions-frontend
+
       - name: Run Installation
         run: yarn install
 
       - name: Run Linter
-        run: cd github-actions-frontend && yarn lint
+        run: yarn lint
