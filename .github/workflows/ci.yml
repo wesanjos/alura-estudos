@@ -1,0 +1,16 @@
+name: "CI (Integração Contínua): Main Workflow"
+
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Runs a single command
+      - name: Run Linter
+        run: yarn lint
