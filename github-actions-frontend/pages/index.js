@@ -3,5 +3,5 @@ export default function HomeScreen() {
     <div>
       <h1>GitHub Actions - Home</h1>
     </div>
-  )
+  );
 }
