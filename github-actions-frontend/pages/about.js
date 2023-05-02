@@ -3,5 +3,5 @@ export default function AboutScreen() {
     <div>
       <h1>GitHub Actions - About</h1>
     </div>
-  )
+  );
 }
