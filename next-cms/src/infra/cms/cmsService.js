@@ -1,4 +1,4 @@
-const TOKEN = process.env.DATO_TOKEN;
+const TOKEN = 'bca06b464643de97fde7dd76143a17';
 
 const globalQuery = `
 query {
