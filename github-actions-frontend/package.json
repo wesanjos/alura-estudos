@@ -10,10 +10,13 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf build && next export && mv ./out ./build",
+    "build": "next build",
+    "export": "rm -rf build && npm run build && next export -o build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "deploy": "yarn run export && npx vercel ./build --confirm --no-clipboard",
+    "deploy:prod": "yarn deploy --prod --token=$VERCEL_TOKEN"
   },
   "devDependencies": {
     "eslint": "8.39.0",
