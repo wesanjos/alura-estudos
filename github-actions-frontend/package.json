@@ -1,19 +1,24 @@
 {
   "name": "github-actions-frontend",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "next": "^13.3.1",
+    "node-fetch": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "rm -rf build && next export && mv ./out ./build",
+    "build": "rm -rf build && next build && next export -o build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:staging": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
+    "deploy:preview": "node ./scripts/pullRequestPreview.js"
   },
   "devDependencies": {
     "eslint": "8.39.0",
