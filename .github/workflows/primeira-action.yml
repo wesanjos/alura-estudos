@@ -1,25 +1,25 @@
-name: "CI (Ingração Continua): Primeira Action"
+# name: "CI (Ingração Continua): Primeira Action"
 
-on:
-  #Ativa esse fluxo de trabalho para cada push ou pull que acontecer apontando para a branch master
-  push:
-    branches: [ "master" ]
-  pull_request:
-    types: [ opened, synchronize ]
+# on:
+#   #Ativa esse fluxo de trabalho para cada push ou pull que acontecer apontando para a branch master
+#   push:
+#     branches: [ "master" ]
+#   pull_request:
+#     types: [ opened, synchronize ]
 
-# Definindo o que irá executar
-jobs:
-  exemplo: 
-    # Descrevendo o sistema que irá rodar as tarefas
-    runs-on: ubuntu-latest
+# # Definindo o que irá executar
+# jobs:
+#   exemplo: 
+#     # Descrevendo o sistema que irá rodar as tarefas
+#     runs-on: ubuntu-latest
 
-    steps: 
-      - uses: actions/checkout@v3
+#     steps: 
+#       - uses: actions/checkout@v3
 
-      # Rodando um comando no shell
-      - name: Run a one-line script
-        run: echo Hello, world Action Test! Github!
+#       # Rodando um comando no shell
+#       - name: Run a one-line script
+#         run: echo Hello, world Action Test! Github!
 
-      # Rodando comando para listagem de arquivos
-      - name: Run a list files
-        run: ls -la
+#       # Rodando comando para listagem de arquivos
+#       - name: Run a list files
+#         run: ls -la

@@ -13,3 +13,15 @@ jobs:
 
       - name: Directory Access and Installation
         run: cd github-actions-frontend && yarn install && yarn lint
+  
+  preview:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Directory Access and Installation
+        run: cd github-actions-frontend && yarn install
+
+      - name: Run Preview Deployment
+        run: cd github-actions-frontend && yarn deploy:preview
