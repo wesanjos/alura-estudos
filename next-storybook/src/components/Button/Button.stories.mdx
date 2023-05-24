@@ -1,11 +1,13 @@
-import { Canvas, Story, Meta } from "@storybook/blocks";
+import { Canvas, Story, Meta, ArgsTable } from "@storybook/blocks";
 import Button from "./Button";
 
-<Meta title="Components/Button" />
+<Meta title="Components/Button" component={Button} />
 
 # Button
 
 Description component
+
+<ArgsTable of={Button} />
 
 ## Button example
 
