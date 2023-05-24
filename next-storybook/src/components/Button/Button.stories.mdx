@@ -1,0 +1,19 @@
+import { Canvas, Story, Meta } from "@storybook/blocks";
+import Button from "./Button";
+
+<Meta title="Components/Button" />
+
+# Button
+
+Description component
+
+## Button example
+
+<Canvas>
+  <Story
+    name="Button example"
+    args={{ children: 'Text button'}}
+  >
+    {(args) => <Button {...args}/>}
+  </Story>
+</Canvas>
