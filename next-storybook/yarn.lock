@@ -1650,7 +1650,7 @@
     memoizerific "^1.11.3"
     prop-types "^15.7.2"
 
-"@storybook/addons@7.0.17":
+"@storybook/addons@7.0.17", "@storybook/addons@^7.0.17":
   version "7.0.17"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-7.0.17.tgz#f01813bd771bffe5aca484738a8061df36e82fe5"
   integrity sha512-mDWVkv17se+eM8OsEvpAodvsLRx1BeGGZMbFTNx1INMZKiGkaepzX7ma+fkBy0cDn3FkIh4TlKL8gzUl5jeQ8A==
@@ -2272,7 +2272,7 @@
     "@testing-library/user-event" "^13.2.1"
     ts-dedent "^2.2.0"
 
-"@storybook/theming@7.0.17":
+"@storybook/theming@7.0.17", "@storybook/theming@^7.0.17":
   version "7.0.17"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.0.17.tgz#2bb6154f558b08c21d924cd80cdf0c170e93c6c4"
   integrity sha512-I0MrZorCGJ1kQmwhsxAsNy02gXRiUmQKuoLNQwitwx8ridzA+ukkkBIr6M38jwA2URaO53AvlGfD/664ZdM4XA==
