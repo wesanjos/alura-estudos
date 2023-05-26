@@ -17,3 +17,4 @@ Este repositório é destinado para publicação dos cursos que realizei e/ou es
 - [Next.js: autenticação e gerenciamento de Tokens](https://cursos.alura.com.br/course/nextjs-autenticacao-gerenciamento-tokens)
 - [Next.js: autenticação e gerenciamento de Tokens](https://cursos.alura.com.br/course/nextjs-autenticacao-gerenciamento-tokens)
 - [Next.js: trabalhando com um CMS](https://cursos.alura.com.br/course/next-js-trabalhando-cms)
+- [NextJS: documentando seu Front-end com o Storybook](https://cursos.alura.com.br/course/nextjs-documentando-front-end-storybook)
