@@ -2,6 +2,7 @@ import { AppProps } from "next/app";
 import GlobalStyle from "@src/theme/GlobalStyle";
 import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
+import ThemeProviderWrapper from "@src/theme/ThemeProvider";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,8 +15,10 @@ export default function App({ Component, pageProps }: AppProps) {
             : true;
         }}
       >
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <ThemeProviderWrapper>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ThemeProviderWrapper>
       </StyleSheetManager>
     </>
   );
