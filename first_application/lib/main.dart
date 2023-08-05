@@ -75,24 +75,62 @@ class _TaskState extends State<Task> {
                             child: Text(
                               widget.name,
                               style: const TextStyle(
-                                  fontSize: 24,
+                                  fontSize: 20,
                                   overflow: TextOverflow.ellipsis),
                             ),
                           ),
-                          ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  nivel++;
-                                });
-                              },
-                              child: const Icon(Icons.arrow_drop_up_outlined))
+                          Container(
+                            width: 52,
+                            height: 52,
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    padding: EdgeInsets.all(0),
+                                    shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.zero)),
+                                onPressed: () {
+                                  setState(() {
+                                    nivel++;
+                                  });
+                                },
+                                child: const Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Icon(Icons.arrow_drop_up_outlined),
+                                    Text(
+                                      'UP',
+                                      style: TextStyle(fontSize: 12),
+                                    )
+                                  ],
+                                )),
+                          )
                         ],
                       ),
                     ),
-                    Text(
-                      'Nível $nivel',
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                    )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: 200,
+                            child: LinearProgressIndicator(
+                              color: Colors.black26,
+                              value: nivel / 10,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Nível $nivel',
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 16),
+                          ),
+                        ),
+                      ],
+                    ),
                   ])
                 ],
               ),
