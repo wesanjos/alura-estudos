@@ -4,4 +4,9 @@ const theme = {
   typography
 };
 
+export type Theme = typeof theme;
+
+//Chaves do valor
+export type ThemeTypographyVariants = keyof typeof typography.variants;
+
 export default theme;
