@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
             title: const Text('Tarefas'),
           ),
           body: ListView(children: const [
-            Task('Aprender Flutter 1'),
-            Task('Aprender Flutter 2'),
-            Task('Aprender Flutter 3'),
-            Task('Aprender Flutter 4'),
-            Task('Aprender Flutter 5'),
+            Task('Aprender Flutter 1', 'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large'),
+            Task('Aprender Flutter 2', 'https://dummyimage.com/72x100/000/fff'),
+            Task('Aprender Flutter 3', 'https://dummyimage.com/72x100/000/fff'),
+            Task('Aprender Flutter 4', 'https://dummyimage.com/72x100/000/fff'),
+            Task('Aprender Flutter 5', 'https://dummyimage.com/72x100/000/fff'),
           ]),
           floatingActionButton: FloatingActionButton(
             onPressed: () {},
@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatefulWidget {
   final String name;
-  const Task(this.name, {super.key});
+  final String photo;
+  const Task(this.name, this.photo, {super.key});
 
   @override
   State<Task> createState() => _TaskState();
@@ -69,6 +70,10 @@ class _TaskState extends State<Task> {
                             color: Colors.black26,
                             width: 72,
                             height: 100,
+                            child: Image.network(
+                              widget.photo,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           SizedBox(
                             width: 200,
