@@ -68,23 +68,35 @@ class _TaskState extends State<Task> {
               child: Stack(
                 children: [
                   Container(
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Colors.blue,
+                    ),
                     height: 140,
                   ),
                   Column(children: [
                     Container(
-                      color: Colors.white,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        color: Colors.white,
+                      ),
                       height: 100,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            color: Colors.black26,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(4),
+                              color: Colors.black26,
+                            ),
                             width: 72,
                             height: 100,
-                            child: Image.network(
-                              widget.photo,
-                              fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(4),
+                              child: Image.network(
+                                widget.photo,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           Column(
@@ -184,7 +196,9 @@ class _TaskState extends State<Task> {
                             width: 200,
                             child: LinearProgressIndicator(
                               color: Colors.black26,
-                              value: (widget.difficulty > 0) ? (nivel / widget.difficulty) / 10 : 1,
+                              value: (widget.difficulty > 0)
+                                  ? (nivel / widget.difficulty) / 10
+                                  : 1,
                             ),
                           ),
                         ),
