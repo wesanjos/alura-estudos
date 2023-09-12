@@ -3,11 +3,18 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isOpacity = true;
 
   // This widget is the root of your application.
   @override
@@ -23,22 +30,31 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Tarefas'),
           ),
-          body: ListView(children: const [
-            Task(
-                'Aprender Flutter 1',
-                'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
-                3),
-            Task('Aprender Flutter 2', 'https://dummyimage.com/72x100/000/fff',
-                2),
-            Task('Aprender Flutter 3', 'https://dummyimage.com/72x100/000/fff',
-                5),
-            Task('Aprender Flutter 4', 'https://dummyimage.com/72x100/000/fff',
-                1),
-            Task('Aprender Flutter 5', 'https://dummyimage.com/72x100/000/fff',
-                3),
-          ]),
+          body: AnimatedOpacity(
+            opacity: isOpacity ? 1 : 0,
+            duration: const Duration(milliseconds: 1000),
+            child: ListView(children: const [
+              Task(
+                  'Aprender Flutter 1',
+                  'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+                  3),
+              Task('Aprender Flutter 2',
+                  'https://dummyimage.com/72x100/000/fff', 2),
+              Task('Aprender Flutter 3',
+                  'https://dummyimage.com/72x100/000/fff', 5),
+              Task('Aprender Flutter 4',
+                  'https://dummyimage.com/72x100/000/fff', 1),
+              Task('Aprender Flutter 5',
+                  'https://dummyimage.com/72x100/000/fff', 3),
+            ]),
+          ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                isOpacity = !isOpacity;
+              });
+            },
+            child: Icon(Icons.remove_red_eye),
           ),
         ));
   }
