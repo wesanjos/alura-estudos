@@ -1,14 +1,14 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:first_application/initial_screen.dart';
+import 'package:first_application/screens/initial_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

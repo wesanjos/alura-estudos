@@ -1,4 +1,4 @@
-import 'package:first_application/task.dart';
+import 'package:first_application/components/task.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _InitialScreenState extends State<InitialScreen> {
             isOpacity = !isOpacity;
           });
         },
-        child: Icon(Icons.remove_red_eye),
+        child: const Icon(Icons.remove_red_eye),
       ),
     );
   }
