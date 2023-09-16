@@ -23,16 +23,17 @@ class _InitialScreenState extends State<InitialScreen> {
         child: ListView(children: const [
           Task(
               'Aprender Flutter 1',
-              'https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large',
+              'assets/images/img-demo-1.png',
               3),
           Task(
-              'Aprender Flutter 2', 'https://dummyimage.com/72x100/000/fff', 2),
+              'Aprender Flutter 2', 'assets/images/img-demo-1.png', 2),
           Task(
-              'Aprender Flutter 3', 'https://dummyimage.com/72x100/000/fff', 5),
+              'Aprender Flutter 3', 'assets/images/img-demo-2.png', 5),
           Task(
-              'Aprender Flutter 4', 'https://dummyimage.com/72x100/000/fff', 1),
+              'Aprender Flutter 4', 'assets/images/img-demo-2.png', 1),
           Task(
-              'Aprender Flutter 5', 'https://dummyimage.com/72x100/000/fff', 3),
+              'Aprender Flutter 5', 'assets/images/img-demo-2.png', 3),
+          SizedBox(height: 80,)
         ]),
       ),
       floatingActionButton: FloatingActionButton(
