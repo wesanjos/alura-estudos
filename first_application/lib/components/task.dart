@@ -14,6 +14,16 @@ class Task extends StatefulWidget {
 
 class _TaskState extends State<Task> {
   int nivel = 0;
+  bool max = false;
+  int stage = 0;
+  double linearProgressIndicatorValue = 0;
+  List<Color> stageColors = [
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.orange,
+    Colors.black
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +36,7 @@ class _TaskState extends State<Task> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: Colors.blue,
+                    color: stageColors[stage],
                   ),
                   height: 140,
                 ),
@@ -84,7 +94,22 @@ class _TaskState extends State<Task> {
                                       borderRadius: BorderRadius.zero)),
                               onPressed: () {
                                 setState(() {
-                                  nivel++;
+                                  linearProgressIndicatorValue =
+                                      (nivel / widget.difficulty) / 10;
+
+                                  if (linearProgressIndicatorValue >= 1.0) {
+                                    if (stage >= 3) {
+                                      stage = 4;
+                                      max = true;
+                                    } else {
+                                      stage++;
+                                      nivel = 1;
+
+                                      print(nivel);
+                                    }
+                                  } else {
+                                    nivel++;
+                                  }
                                 });
                               },
                               child: const Column(
@@ -125,7 +150,7 @@ class _TaskState extends State<Task> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'Nível $nivel',
+                          max ? 'Nível máximo' : 'Nível $nivel',
                           style: const TextStyle(
                               color: Colors.white, fontSize: 16),
                         ),
@@ -139,4 +164,3 @@ class _TaskState extends State<Task> {
         ));
   }
 }
-
