@@ -11,7 +11,7 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController difficultyController = TextEditingController();
   TextEditingController imageController = TextEditingController();
-  
+
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -42,7 +42,7 @@ class _FormScreenState extends State<FormScreen> {
                         if (value != null && value.isEmpty) {
                           return 'Insira o nome da tarefa';
                         }
-    
+
                         return null;
                       },
                       controller: nameController,
@@ -63,7 +63,7 @@ class _FormScreenState extends State<FormScreen> {
                             int.parse(value) < 1) {
                           return 'Insira uma dificuldade entre 1 e 5';
                         }
-    
+
                         return null;
                       },
                       keyboardType: TextInputType.number,
@@ -86,7 +86,7 @@ class _FormScreenState extends State<FormScreen> {
                         if (value!.isEmpty) {
                           return 'Inisira URL de uma imagem';
                         }
-    
+
                         return null;
                       },
                       keyboardType: TextInputType.url,
@@ -124,6 +124,12 @@ class _FormScreenState extends State<FormScreen> {
                           print(nameController.text);
                           print(difficultyController.text);
                           print(imageController.text);
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Salvando nova tarefa'),
+                            ),
+                          );
                         }
                       },
                       child: Text('Adicionar'))
