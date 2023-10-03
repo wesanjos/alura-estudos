@@ -1,6 +1,7 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:first_application/screens/initial_screen.dart';
+import 'package:first_application/screens/form_screen.dart';
+// import 'package:first_application/screens/initial_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const InitialScreen(),
+      home: const FormScreen(),
     );
   }
 }
