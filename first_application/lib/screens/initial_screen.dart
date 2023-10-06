@@ -17,7 +17,9 @@ class _InitialScreenState extends State<InitialScreen> {
       appBar: AppBar(
         title: const Text('Tarefas'),
       ),
-      body: ListView(children: TaskInherited.of(context)!.taskList),
+      body: ListView(
+          children: TaskInherited.of(context)!.taskList,
+          padding: EdgeInsets.only(top: 8, bottom: 70)),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
