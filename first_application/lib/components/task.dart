@@ -6,14 +6,15 @@ class Task extends StatefulWidget {
   final String photo;
   final int difficulty;
 
-  const Task(this.name, this.photo, this.difficulty, {super.key});
+  Task(this.name, this.photo, this.difficulty, {super.key});
+
+  int nivel = 0;
 
   @override
   State<Task> createState() => _TaskState();
 }
 
 class _TaskState extends State<Task> {
-  int nivel = 0;
   bool max = false;
   int stage = 0;
   double linearProgressIndicatorValue = 0;
@@ -108,7 +109,7 @@ class _TaskState extends State<Task> {
                               onPressed: () {
                                 setState(() {
                                   linearProgressIndicatorValue =
-                                      (nivel / widget.difficulty) / 10;
+                                      (widget.nivel / widget.difficulty) / 10;
 
                                   if (linearProgressIndicatorValue >= 1.0) {
                                     if (stage >= 3) {
@@ -116,12 +117,12 @@ class _TaskState extends State<Task> {
                                       max = true;
                                     } else {
                                       stage++;
-                                      nivel = 1;
+                                      widget.nivel = 1;
 
-                                      print(nivel);
+                                      print(widget.nivel);
                                     }
                                   } else {
-                                    nivel++;
+                                    widget.nivel++;
                                   }
                                 });
                               },
@@ -155,7 +156,7 @@ class _TaskState extends State<Task> {
                           child: LinearProgressIndicator(
                             color: Colors.black26,
                             value: (widget.difficulty > 0)
-                                ? (nivel / widget.difficulty) / 10
+                                ? (widget.nivel / widget.difficulty) / 10
                                 : 1,
                           ),
                         ),
@@ -163,7 +164,7 @@ class _TaskState extends State<Task> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          max ? 'Nível máximo' : 'Nível $nivel',
+                          max ? 'Nível máximo' : 'Nível $widget.nivel',
                           style: const TextStyle(
                               color: Colors.white, fontSize: 16),
                         ),
