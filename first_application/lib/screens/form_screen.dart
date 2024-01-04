@@ -1,3 +1,5 @@
+import 'package:first_application/components/task.dart';
+import 'package:first_application/data/task_dao.dart';
 import 'package:first_application/data/task_inherited.dart';
 import 'package:flutter/material.dart';
 
@@ -143,10 +145,13 @@ class _FormScreenState extends State<FormScreen> {
                           // print(difficultyController.text);
                           // print(imageController.text);
 
-                          TaskInherited.of(widget.taskContext)?.newTask(
+                          TaskDao().save(
+                            Task(
                               nameController.text,
                               imageController.text,
-                              int.parse(difficultyController.text));
+                              int.parse(difficultyController.text),
+                            ),
+                          );
 
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
