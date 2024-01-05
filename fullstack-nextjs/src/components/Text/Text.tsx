@@ -7,27 +7,34 @@ import { useTheme } from "@src/theme/ThemeProvider";
 interface TextProps {
   variant?: ThemeTypographyVariants;
   styleSheet?: StyleSheet;
-  tag: "p" | "li" | "h1";
+  tag: "p" | "li" | "h1" | string;
   children: React.ReactNode;
+  ref: any;
 }
 
-export default function Text({ styleSheet, variant, ...props }: TextProps) {
-  const theme = useTheme();
-  const textVariant = theme.typography.variants[variant];
+const Text = React.forwardRef(
+  ({ tag, styleSheet, variant, ...props }: TextProps, ref) => {
+    const theme = useTheme();
+    const textVariant = theme.typography.variants[variant];
 
-  return (
-    <BaseComponent
-      {...props}
-      styleSheet={{
-        fontFamily: theme.typography.fontFamily,
-        ...textVariant,
-        ...styleSheet,
-      }}
-    />
-  );
-}
+    return (
+      <BaseComponent
+        as={tag}
+        {...props}
+        styleSheet={{
+          fontFamily: theme.typography.fontFamily,
+          ...textVariant,
+          ...styleSheet,
+        }}
+        ref={ref}
+      />
+    );
+  }
+);
 
 Text.defaultProps = {
   tag: "p",
   variant: "body2",
 };
+
+export default Text;

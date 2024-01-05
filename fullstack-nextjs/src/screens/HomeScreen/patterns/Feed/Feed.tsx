@@ -1,6 +1,7 @@
 import Box from "@src/components/Box/Box";
 import Icon from "@src/components/Icon/Icon";
 import Image from "@src/components/Image/Image";
+import Link from "@src/components/Link/Link";
 import Text from "@src/components/Text/Text";
 import React from "react";
 
@@ -21,12 +22,15 @@ export default function Feed({ children }) {
         alt="Wesley Anjos"
       />
 
-      <Icon name="youtube" size="md" />
+      <Link href="https://youtube.com">
+        <Icon name="youtube" size="md" />
+      </Link>
+
       <Icon name="twitter" size="md" />
       <Icon name="instagram" size="md" />
       <Icon name="github" size="md" />
 
-      <Text>Feed Base</Text>
+      <Text tag="h3">Feed Base</Text>
 
       {children}
     </Box>
@@ -36,7 +40,7 @@ export default function Feed({ children }) {
 Feed.Header = () => {
   return (
     <Box>
-      <Text>Feed Header</Text>
+      <Text tag="h3">Feed Header</Text>
     </Box>
   );
 };
@@ -44,7 +48,7 @@ Feed.Header = () => {
 Feed.Posts = () => {
   return (
     <Box>
-      <Text>Feed Posts</Text>
+      <Text tag="h2">Feed Posts</Text>
     </Box>
   );
 };
