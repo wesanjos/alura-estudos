@@ -1,4 +1,5 @@
 import Box from "@src/components/Box/Box";
+import Button from "@src/components/Button/Button";
 import Icon from "@src/components/Icon/Icon";
 import Image from "@src/components/Image/Image";
 import Link from "@src/components/Link/Link";
@@ -12,15 +13,21 @@ interface FeedProps {
 export default function Feed({ children }) {
   return (
     <Box>
-      <Image
-        styleSheet={{
-          width: "128px",
-          height: "128px",
-          borderRadius: "100%",
-        }}
-        src="https://github.com/wesanjos.png"
-        alt="Wesley Anjos"
-      />
+      <Button>
+        Buy my coffee
+      </Button>
+
+      <Button.Base href="https://github.com/wesanjos">
+        <Image
+          styleSheet={{
+            width: "128px",
+            height: "128px",
+            borderRadius: "100%",
+          }}
+          src="https://github.com/wesanjos.png"
+          alt="Wesley Anjos"
+        />
+      </Button.Base>
 
       <Link href="https://youtube.com">
         <Icon name="youtube" size="md" />
