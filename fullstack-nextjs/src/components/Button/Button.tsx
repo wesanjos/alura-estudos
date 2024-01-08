@@ -18,7 +18,7 @@ export default function Button({
   fullWidth,
   colorVariant,
   variant,
-  size
+  size,
 }: ButtonProps) {
   const theme = useTheme();
 
@@ -26,6 +26,8 @@ export default function Button({
     <ButtonBase
       styleSheet={{
         alignSelf: "flex-start",
+        justifyContent: "center",
+        alignItems: "center",
         ...colorVariantBy(theme, colorVariant, variant),
         ...buttonSize[size],
         ...(fullWidth && { alignSelf: "initial" }),
@@ -39,9 +41,9 @@ export default function Button({
 
 Button.defaultProps = {
   fullWidth: false,
-  size: 'md',
-  variant: 'contained',
-  colorVariant: 'primary'
+  size: "md",
+  variant: "contained",
+  colorVariant: "primary",
 };
 
 Button.Base = ButtonBase;
