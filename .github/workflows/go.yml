@@ -11,7 +11,7 @@ on:
 
 jobs:
 
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -21,8 +21,19 @@ jobs:
       with:
         go-version: '1.20'
 
-    - name: Build
-      run: cd api-go-cicd-testes && go build -v main.go
+    - name: Build-DB
+      run: cd api-go-cicd-testes && docker-compose build
+
+    - name: Create-DB
+      run:  cd api-go-cicd-testes && docker-compose up -d
 
     - name: Test
       run: cd api-go-cicd-testes && go test -v main_test.go
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cd api-go-cicd-testes && go build -v main.go
